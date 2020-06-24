@@ -21,7 +21,7 @@
 
 2. If Application created the first time, then Expose the application. Else don’t expose it.
 
-Let's Start:
+##  Start:
 
 For performing this task we require 3 VM
 
@@ -61,7 +61,7 @@ systemctl start jenkins
 and then configure your cloud as I showed below:
 
 ```javascript
-Jenkins->Manage Jenkins -> Manage nodes and clouds-> configure cloud-> add a new cloud-> docker
+Jenkins -> Manage Jenkins -> Manage nodes and clouds -> configure cloud -> add a new cloud -> docker
 ```
 
 ![4](https://user-images.githubusercontent.com/66811679/85509191-c446c580-b5b2-11ea-93af-f80d0205495f.png)
@@ -80,22 +80,26 @@ echo "Auto Push Enabled"
 git push
 
 
-curl --user "admin:redhat" http://192.168.43.140:8080//job/Job1_image_build/build?token=devopss
+curl --user "VIKAS RAWAT:redhat" http://192.168.43.91:8080//job/Job1_image_build/build?token=devops
 ```
 
-GitHub Repo:
+## GitHub Repo:
 
-JOB1:
+## JOB1:
 
 ![4](https://user-images.githubusercontent.com/66811679/85510059-19370b80-b5b4-11ea-880a-d37d4bfee07e.PNG)
+
 ![6](https://user-images.githubusercontent.com/66811679/85510571-c6aa1f00-b5b4-11ea-868b-bcd926837f84.png)
 
-Note:
+## Note:
 
 1.In the Cloud column type, the name of the cloud is configured earlier.
+
 2.In Registry Credential column give your docker hub credential.
+
 3.Your image name always starts with your username.
-JOB2(Prerequisites):
+
+## JOB2(Prerequisites):
 
 Before going to JOB2 we again need to perform some steps...
 
@@ -103,7 +107,7 @@ Create a cloud... Create a Kubernetes cluster in VM2 which will help you to cont
 
 Creating a Kubernetes Image:
 
-Dockerfile:
+## Dockerfile:
 ```javascript
 FROM centos
 RUN yum install java-11-openjdk.x86_64 -y
@@ -188,17 +192,14 @@ Now go and configure cloud for your JOB2
 
 ![6](https://user-images.githubusercontent.com/66811679/85514732-931dc380-b5b9-11ea-9002-f21e178d1c52.png)
 
-JOB2:
+## JOB2:
 
 ![8](https://user-images.githubusercontent.com/66811679/85515250-23f49f00-b5ba-11ea-9591-b3540a39960f.png)
 
 ![9](https://user-images.githubusercontent.com/66811679/85515615-8fd70780-b5ba-11ea-92c8-211da5121790.png)
 
-That's It...
-
 Now come to the testing phase.
 
-Just go and commit from directory everything will be automated just from one commit...
 
 You will access your website from a browser using minikube_ip:<port>
 
