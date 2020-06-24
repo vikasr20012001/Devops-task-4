@@ -49,4 +49,41 @@ and then reload and restart your docker services
 systemctl daemon-reload
 systemctl restart docker
 ```
-lkk
+
+Now go to your VM1 and start your Jenkins service and install the "docker" plugin
+
+```javascript
+systemctl start jenkins
+```
+
+![3](https://user-images.githubusercontent.com/66811679/85508617-aaf14980-b5b1-11ea-90b6-7286d0da955d.png)
+
+and then configure your cloud as I showed below:
+
+```javascript
+Jenkins->Manage Jenkins -> Manage nodes and clouds-> configure cloud-> add a new cloud-> docker
+```
+
+![4](https://user-images.githubusercontent.com/66811679/85509191-c446c580-b5b2-11ea-93af-f80d0205495f.png)
+
+In the Yellow section type your VM2 IP where your docker engine is running...
+
+And rest the column fill as I filled.
+
+POST-COMMIT file for triggering:
+
+```javascript
+#!/bin/bash
+
+echo "Auto Push Enabled"
+
+git push
+
+
+curl --user "admin:redhat" http://192.168.43.140:8080//job/Job1_image_build/build?token=devopss
+```
+
+GitHub Repo:
+
+JOB1:
+
