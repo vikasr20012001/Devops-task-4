@@ -209,7 +209,8 @@ and for checking minikube IP use minikube ip command inside window cmd prompt
 
 OUTPUTS:
 
-![y](https://user-images.githubusercontent.com/66811679/85520914-c748b280-b5c0-11ea-8fe3-17ddfd470c71.jpg)
+![y](https://user-images.githubusercontent.com/66811679/85535320-4d6bf580-b5cf-11ea-94e5-42d2e6533c8a.jpg)
+
 
 
 ![13](https://user-images.githubusercontent.com/66811679/85522679-36270b00-b5c3-11ea-9d15-7d6922aa191d.png)
@@ -217,7 +218,10 @@ OUTPUTS:
 
 ![09](https://user-images.githubusercontent.com/66811679/85523943-d598cd80-b5c4-11ea-9e4f-98dde6607375.png)
 
-![78](https://user-images.githubusercontent.com/66811679/85524586-8a32ef00-b5c5-11ea-9841-adf55419ba35.PNG)
+
+![90](https://user-images.githubusercontent.com/66811679/85530372-201d4880-b5cb-11ea-81f0-4be735416ed4.PNG)
+
+
 
 ![8](https://user-images.githubusercontent.com/66811679/85524153-1abcff80-b5c5-11ea-8c06-576442502866.png)
 
