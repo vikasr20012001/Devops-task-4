@@ -154,3 +154,57 @@ users:
     client-key: client.key
     client-certificate: client.crt
 ```
+
+create a deploy.yml file(Same directory)
+```javascript
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: dev-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+        env: prod
+
+  template:
+    metadata:
+     name: dev-pod
+     labels:
+       env: prod
+    spec:
+     containers:
+      - name: dev-con
+        image: chatpc99/webui:latest
+```
+Now lastly, create a Kubernetes cluster image using dockerfile
+
+```javascript
+docker build -t kube:latest .
+```
+Now go and configure cloud for your JOB2
+
+![5](https://user-images.githubusercontent.com/66811679/85513458-42f23180-b5b8-11ea-9510-603da44f87e2.png)
+
+![6](https://user-images.githubusercontent.com/66811679/85514732-931dc380-b5b9-11ea-9002-f21e178d1c52.png)
+
+JOB2:
+
+![8](https://user-images.githubusercontent.com/66811679/85515250-23f49f00-b5ba-11ea-9591-b3540a39960f.png)
+
+![9](https://user-images.githubusercontent.com/66811679/85515615-8fd70780-b5ba-11ea-92c8-211da5121790.png)
+
+That's It...
+
+Now come to the testing phase.
+
+Just go and commit from directory everything will be automated just from one commit...
+
+You will access your website from a browser using minikube_ip:<port>
+
+I print the whole Kubernetes details so you can see the port from there...
+
+and for checking minikube IP use minikube ip command inside window cmd prompt
+
+OUTPUTS:
+
