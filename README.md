@@ -208,3 +208,13 @@ and for checking minikube IP use minikube ip command inside window cmd prompt
 
 OUTPUTS:
 
+![y](https://user-images.githubusercontent.com/66811679/85520914-c748b280-b5c0-11ea-8fe3-17ddfd470c71.jpg)
+
+
+![13](https://user-images.githubusercontent.com/66811679/85522679-36270b00-b5c3-11ea-9d15-7d6922aa191d.png)
+
+
+![09](https://user-images.githubusercontent.com/66811679/85523943-d598cd80-b5c4-11ea-9e4f-98dde6607375.png)
+
+![8](https://user-images.githubusercontent.com/66811679/85524153-1abcff80-b5c5-11ea-8c06-576442502866.png)
+
