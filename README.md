@@ -48,5 +48,4 @@ and then reload and restart your docker services
 ```javascript
 systemctl daemon-reload
 systemctl restart docker
-
-ccc
+```
