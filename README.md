@@ -133,7 +133,7 @@ For Running this file create a new directory<any_name>
 
 Inside this directory add your client.key, client.crt, ca.crt file
 
-I will get this file from **"C:\Users\<account_name>\.minikube" ** and **"C:\Users\<Account_name>\.minikube\profiles\minikube"**
+I will get this file from **"C:\Users\<account_name>\.minikube"  and "C:\Users\<Account_name>\.minikube\profiles\minikube"**
 
 and then create a config file in this directory( Code attached below):
 
