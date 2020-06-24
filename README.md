@@ -87,3 +87,70 @@ GitHub Repo:
 
 JOB1:
 
+![4](https://user-images.githubusercontent.com/66811679/85510059-19370b80-b5b4-11ea-880a-d37d4bfee07e.PNG)
+![6](https://user-images.githubusercontent.com/66811679/85510571-c6aa1f00-b5b4-11ea-868b-bcd926837f84.png)
+
+Note:
+
+1.In the Cloud column type, the name of the cloud is configured earlier.
+2.In Registry Credential column give your docker hub credential.
+3.Your image name always starts with your username.
+JOB2(Prerequisites):
+
+Before going to JOB2 we again need to perform some steps...
+
+Create a cloud... Create a Kubernetes cluster in VM2 which will help you to contact minikube.
+
+Creating a Kubernetes Image:
+
+Dockerfile:
+```javascript
+FROM centos
+RUN yum install java-11-openjdk.x86_64 -y
+RUN yum install openssh-server -y
+RUN yum install sudo -y
+RUN echo "root:redhat" | chpasswd
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+
+RUN chmod +x ./kubectl
+RUN mv ./kubectl /usr/local/bin/kubectl
+RUN mkdir /root/.kube
+COPY client.key /root/.kube
+COPY client.crt /root/.kube
+COPY ca.crt /root/.kube
+COPY config /root/.kube
+RUN mkdir /root/devops
+COPY deploy.yml /root/devops
+RUN ssh-keygen -A
+CMD ["/usr/sbin/sshd", "-D"]
+```
+
+For Running this file create a new directory<any_name>
+
+Inside this directory add your client.key, client.crt, ca.crt file
+
+I will get this file from **"C:\Users\<account_name>\.minikube" ** and **"C:\Users\<Account_name>\.minikube\profiles\minikube"**
+
+and then create a config file in this directory( Code attached below):
+
+```javascript
+apiVersion: v1
+kind: Config
+
+clusters:
+- cluster:
+    server: https://192.168.43.91:8443     #Add Your Minikube IP here
+    certificate-authority: ca.crt
+  name: spcluster
+
+contexts:
+- context:
+    cluster: chatpc
+    user: vikas
+
+users:
+- name: vikas
+  user:
+    client-key: client.key
+    client-certificate: client.crt
+```
